@@ -1,3 +1,10 @@
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Product {
 
     private String name;
@@ -11,7 +18,6 @@ public class Product {
         this.price = price;
         this.amount = amount;
     }
-
 
     public String getName() {
         return name;
@@ -35,5 +41,14 @@ public class Product {
 
     public void setAmount(int amount) {
         this.amount = amount;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", amount=" + amount +
+                '}';
     }
 }

@@ -29,7 +29,7 @@ public class WorkingWithString {
                 throw new InCorrectPriceException("Cena producta doolzhna bit' polozhitel'nim chislom! (" + price + ") - eto vveli vi.");
             if (amount < 0)
                 throw new InCorrectAmountException("Kolichestvo producta doolzhna bit' polozhitel'nim chislom! (" + amount + ") - eto vveli vi.");
-            product = new Product(nameProduct, price, amount); // я правильно создаю продукт для возвращения его методом?
+            product = new Product(nameProduct, price, amount);
             System.out.println("Stroka korrektna.");
         } catch (InCorrectPriceException | InCorrectAmountException e) {
             System.out.println(e.getMessage());
@@ -47,7 +47,7 @@ public class WorkingWithString {
             System.out.println("Sluchilos' nepredvidennoe iskluchenie " + e.getMessage());
             e.printStackTrace();
         }
-        return product; // я правильно создаю продукт для возвращения его методом?
+        return product;
     }
 
 
