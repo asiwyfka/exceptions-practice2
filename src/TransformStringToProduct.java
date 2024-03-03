@@ -10,19 +10,27 @@ public class TransformStringToProduct {
         System.out.println();
         ArrayList<Product> listOfProducts = new ArrayList<>();
         for (String str : stringList) {
-            if (validateString.validateString(str)) {
-                Pattern pattern = Pattern.compile("^(.*): (.*) r, (.*) sht$");
-                Matcher matcher = pattern.matcher(str);
-                if (matcher.matches()) {
-                    String nameProduct = matcher.group(1);
-                    int price = Integer.parseInt(matcher.group(2));
-                    int amount = Integer.parseInt(matcher.group(3));
+            try {
+                if (validateString.validateString(str)) {
+                    Pattern pattern = Pattern.compile("^(.*): (.*) r, (.*) sht$");
+                    Matcher matcher = pattern.matcher(str);
+                    if (matcher.matches()) {
+                        String nameProduct = matcher.group(1);
+                        int price = Integer.parseInt(matcher.group(2));
+                        int amount = Integer.parseInt(matcher.group(3));
 
-                    Product product = new Product(nameProduct, price, amount);
-                    listOfProducts.add(product);
-                    System.out.println("Validatsiya prowla yspeshno. Stroka dobalena v listOfProducts!");
+                        Product product = new Product(nameProduct, price, amount);
+                        listOfProducts.add(product);
+                        System.out.println();
+                        System.out.println("Validatsiya prowla yspeshno. Stroka dobalena v listOfProducts!");
+                    }
                 }
-            } else System.out.println("Validatsiya ne prowla. Stroka ne dobalena v listOfProducts!");
+            } catch (ShablonException e) {
+                System.out.println();
+                System.out.println("Validatsiya ne prowla. Stroka ne dobalena v listOfProducts!");
+                System.out.println(e.getMessage());
+                e.printStackTrace();
+            }
         }
         return listOfProducts;
     }

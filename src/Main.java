@@ -43,7 +43,12 @@ public class Main {
             ValidateString validateString = new ValidateString();
             System.out.println();
             System.out.println(x);
-            System.out.println(validateString.validateString(x));
+            try {
+                System.out.println(validateString.validateString(x));
+            } catch (ShablonException e) {
+                System.out.println(e.getMessage());
+                e.printStackTrace();
+            }
         }
 
 
