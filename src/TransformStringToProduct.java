@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
 
 public class TransformStringToProduct {
 
-    ValidateString validateString = new ValidateString();
+    private ValidateString validateString = new ValidateString();
 
     public ArrayList<Product> transformStringListToProductList(ArrayList<String> stringList) {
         System.out.println();
@@ -25,12 +25,14 @@ public class TransformStringToProduct {
                         System.out.println("Validatsiya prowla yspeshno. Stroka dobalena v listOfProducts!");
                     }
                 }
-            } catch (ShablonException e) {
+            } catch (ShablonException | NumberFormatException e) {
                 System.out.println();
                 System.out.println("Validatsiya ne prowla. Stroka ne dobalena v listOfProducts!");
                 System.out.println(e.getMessage());
                 e.printStackTrace();
             }
+
+
         }
         return listOfProducts;
     }

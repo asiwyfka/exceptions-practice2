@@ -11,9 +11,16 @@ public class ValidateString {
             throw new ShablonException("Stroka vvedena ne soglasno shablony.");
 
         String nameProduct = matcher.group(1);
-        int price = Integer.parseInt(matcher.group(2));
-        int amount = Integer.parseInt(matcher.group(3));
+        int price = 0;
+        int amount = 0;
 
+        try {
+            price = Integer.parseInt(matcher.group(2));
+            amount = Integer.parseInt(matcher.group(3));
+        } catch (NumberFormatException e) {
+            System.out.println("V cene/kolichestve dolzhny vvodit' polozhitel'niye chisla!" + e.getMessage());
+            e.printStackTrace();
+        }
         if (nameProduct.isEmpty())
             throw new NullNameException("Nazvanie producta ne dolzho bit' pustim! (" + nameProduct + ") - eto vveli vi.");
         if (nameProduct.length() > 20)
@@ -21,7 +28,7 @@ public class ValidateString {
         if (price < 0)
             throw new InCorrectPriceException("Cena producta doolzhna bit' polozhitel'nim chislom! (" + price + ") - eto vveli vi.");
         if (amount < 0)
-        throw new InCorrectAmountException("Kolichestvo producta doolzhna bit' polozhitel'nim chislom! (" + amount + ") - eto vveli vi.");
+            throw new InCorrectAmountException("Kolichestvo producta doolzhna bit' polozhitel'nim chislom! (" + amount + ") - eto vveli vi.");
         return true;
     }
 }

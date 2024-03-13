@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
 
@@ -21,15 +22,15 @@ public class Main {
 
         //  arbuz: 50 r, 2 sht
 
-        /* Первая реализация работы программы
-        System.out.println("Vvedi info po producty soglasno shablona - \"<text1>: <chislo1> r, <chislo2> sht\"");
-        Scanner scanner = new Scanner(System.in);
-        String str = scanner.nextLine();
-        WorkingWithString.checkString(str);
-        WorkingWithString.readStringsFromFile("File");
-        ArrayList<String> stringProductList = WorkingWithString.readStringsFromFileToCopyToList("File 2");
-        WorkingWithString.writeStringsToFileFromStringProductList("File 3", stringProductList);
-        */
+       // Первая реализация работы программы
+//        System.out.println("Vvedi info po producty soglasno shablona - \"<text1>: <chislo1> r, <chislo2> sht\"");
+//        Scanner scanner = new Scanner(System.in);
+//        String str = scanner.nextLine();
+//        WorkingWithString.checkString(str);
+//        WorkingWithString.readStringsFromFile("File");
+//        ArrayList<String> stringProductList = WorkingWithString.readStringsFromFileToCopyToList("File 2");
+//        WorkingWithString.writeStringsToFileFromStringProductList("File 3", stringProductList);
+
 
         //Вторая реализация работы программы
 
